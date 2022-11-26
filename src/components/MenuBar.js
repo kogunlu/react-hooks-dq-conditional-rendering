@@ -12,21 +12,35 @@ function MenuBar(props) {
 
   */
 
+  // function clickHandler(tab){
+  //   props.setActiveTab(tab)
+  // }
+
+
+
   return (
     <div className="ui four item menu">
-      <span className="item active">
+      <span 
+      onClick={() => props.setActiveTab(activeTab => activeTab = "person")} 
+      className={`item ${props.activeTab === 'person' ? "active": null}`}>
         <i className="user large icon" />
       </span>
 
-      <span className="item">
+      <span 
+      onClick={() => props.setActiveTab(activeTab => activeTab = "camera")}  
+      className={`item ${props.activeTab === 'camera' ? "active": null}`}>
         <i className="photo large icon" />
       </span>
 
-      <span className="item">
+      <span 
+      onClick={() => props.setActiveTab(activeTab => activeTab = "glass")}  
+      className={`item ${props.activeTab === 'glass' ? "active": null}`}>
         <i className="cocktail large icon" />
       </span>
 
-      <span className="item">
+      <span 
+      onClick={() => props.setActiveTab(activeTab => activeTab ="other")}  
+      className={`item ${props.activeTab === 'other' ? "active": null}`}>
         <i className=" themeisle large icon" />
       </span>
     </div>
